@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap');
+* {
+  font-family: 'Red Hat Text', sans-serif; /* Define a nova fonte */
+  margin: 0; /* Reseta margens */
+  padding: 0; /* Reseta espaçamentos */
+  box-sizing: border-box; /* Garante espaçamentos consistentes */
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo */
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Contêiner de Gráficos */
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Seções de Gráficos */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Garante que as seções ocupem todo o espaço disponível */
+  max-width: 400px; /* Limita a largura das seções */
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: #6e44ff;
+  margin-bottom: 1rem;
+  text-align: center; /* Centraliza o título */
+}
+
+/* Caixa dos Gráficos */
+.box {
+  width: 100%;
+  height: 250px; /* Definindo uma altura fixa para os gráficos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* Contêiner Meta */
+.meta-help {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsividade */
+}
+
+/* Meta Mensal */
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  min-width: 200px; /* Garante que a meta tenha uma largura mínima */
+  padding: 2rem;
+}
+
+.meta h3 {
+  font-size: 1.5rem;
+  color: #6e44ff;
+  text-align: center;
+}
+
+.save-goal {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #6e44ff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.save-goal:hover {
+  background-color: #5935d1;
+}
+
+/* Ajuda e Dicas */
+.help {
+  width: 40%;
+  min-width: 200px;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-image: url("./nuvem-pig.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.help p {
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.piggy-bank img {
+  max-width: 150px;
+}
+
+/* Caixa de Dicas */
+.dica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+}
+
+[vw] {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+[vw-access-button] {
+  background-color: #0066cc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+[vw-plugin-wrapper] {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none; /* Alterar para block ao abrir */
+}
+
+
