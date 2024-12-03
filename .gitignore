@@ -39,15 +39,7 @@ coverage/
 *.tmp
 *.temp
 
-# Ignorar imagens e arquivos estáticos específicos não necessários para commits
-public/img/*.tmp
-public/img/*.bak
-
 # Ignorar arquivos que podem ser gerados automaticamente
 *.bak
 *.old
 
-# Ignorar arquivos de screenshots de testes
-*.png
-*.jpeg
-*.jpg
