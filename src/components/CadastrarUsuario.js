@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -12,6 +12,34 @@ const Cadastro = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const vlibrasContainer = document.createElement("div");
+    vlibrasContainer.setAttribute("vw", "");
+    vlibrasContainer.classList.add("enabled");
+    vlibrasContainer.innerHTML = `
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(vlibrasContainer);
+
+    const script = document.createElement("script");
+    script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+    script.async = true;
+    script.onload = () => {
+      if (window.VLibras && window.VLibras.Widget) {
+        new window.VLibras.Widget("https://vlibras.gov.br/app");
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(vlibrasContainer);
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -35,7 +63,7 @@ const Cadastro = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post("https://pi-02-sem-2024.onrender.com/user/register", {
+      await axios.post("https://pi-02-sem-2024.onrender.com/user/register", {
         username,
         password,
       });

@@ -11,6 +11,18 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // Adiciona VLibras
+    const vlibrasContainer = document.createElement("div");
+    vlibrasContainer.setAttribute("vw", "");
+    vlibrasContainer.classList.add("enabled");
+    vlibrasContainer.innerHTML = `
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    `;
+    document.body.appendChild(vlibrasContainer);
+
     const vlibrasScript = document.createElement("script");
     vlibrasScript.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
     vlibrasScript.async = true;
@@ -21,8 +33,10 @@ const Login = () => {
     };
     document.body.appendChild(vlibrasScript);
 
+    // Adiciona a barra de acessibilidade
     const accessibilityScript = document.createElement("script");
-    accessibilityScript.src = "https://cdn.jsdelivr.net/gh/brenonovelli/Accessibility-Settings-Bar/dist/AccessibilitySettingsBar.min.js";
+    accessibilityScript.src =
+      "https://cdn.jsdelivr.net/gh/brenonovelli/Accessibility-Settings-Bar/dist/AccessibilitySettingsBar.min.js";
     accessibilityScript.async = true;
     accessibilityScript.onload = () => {
       if (window.AccessibilitySettingsBar) {
@@ -32,6 +46,8 @@ const Login = () => {
     document.body.appendChild(accessibilityScript);
 
     return () => {
+      // Remove VLibras e a barra de acessibilidade
+      document.body.removeChild(vlibrasContainer);
       document.body.removeChild(vlibrasScript);
       document.body.removeChild(accessibilityScript);
     };
@@ -99,12 +115,6 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div vw="true" className="enabled">
-        <div vw-access-button="true" className="active"></div>
-        <div vw-plugin-wrapper="true">
-          <div className="vw-plugin-top-wrapper"></div>
-        </div>
-      </div>
       <div className="login-container">
         <div className="login-box">
           <img src="/img/login.png" alt="Login Text" className="login" />
