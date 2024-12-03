@@ -1,0 +1,111 @@
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap');
+* {
+  font-family: 'Red Hat Text', sans-serif; /* Define a nova fonte */
+  margin: 0; /* Reseta margens */
+  padding: 0; /* Reseta espaçamentos */
+  box-sizing: border-box; /* Garante espaçamentos consistentes */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("./background.png");
+  background-size: cover; 
+}
+
+.login {
+  width: 160px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+
+.cadastro {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+.login-box {
+  background: #fff;
+  color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 30px;
+  margin-top: -100px;
+}
+
+.login-box input {
+  padding: 15px; /* Espaçamento maior para inputs */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin-top: 20px;
+  background-color: #d9d9d9;
+  width: 100%; /* Garante que os inputs ocupem toda a largura */
+}
+
+.login-box input::placeholder {
+  color: #9f5df5; /* Cor do placeholder */
+  font-size: 1rem; /* Tamanho do texto */
+}
+
+.login-box input:focus {
+  border-color: #7e3ac1;
+}
+
+.login-box button {
+  background: #9f5df5;
+  width: 100%; /* Botão ocupa toda a largura disponível */
+  color: #fff;
+  border: none;
+  padding: 15px; /* Aumenta o espaçamento interno do botão */
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.login-box button:hover {
+  background: #7e3ac1;
+}
+
+.login-box p {
+  font-size: 0.9rem;
+}
+
+.login-box p a {
+  color: #9f5df5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box p a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.link{
+  margin-top: 25px;
+}
