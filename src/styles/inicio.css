@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap');
+* {
+  font-family: 'Red Hat Text', sans-serif; /* Define a nova fonte */
+  margin: 0; /* Reseta margens */
+  padding: 0; /* Reseta espaçamentos */
+  box-sizing: border-box; /* Garante espaçamentos consistentes */
+}
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #6139FF;
+    font-weight: bold;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-icon {
+    height: 40px;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #9f5df5;
+  }
+  
+  
+  /* Main Section */
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #fdfdfd;
+  }
+  
+  .content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Image Section */
+  .image-container {
+    flex: 0.9;
+  }
+  
+  .main-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Info Section */
+  .info {
+    flex: 1;
+    position: relative;
+    left: 50px;
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+  }
+  
+  .info ul {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+  
+  .info li {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    color: #9f5df5;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #9f5df5;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    display: block; 
+    width: 350px;
+    height: 50px;
+  }
+  
+  .cta-button:hover {
+    background-color: #8d4be2;
+  }
+  
