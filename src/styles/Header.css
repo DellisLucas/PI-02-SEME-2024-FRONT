@@ -136,3 +136,17 @@
     background-color: #e53935;
   }
   
+  .logout-button {
+    background-color: transparent;
+    color: #ff4d4d;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-left: 20px;
+  }
+  
+  .logout-button:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+  }
+  
