@@ -21,13 +21,13 @@ const Header_Home = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:3001/reports/generate", // Substitua pela sua rota
+        "https://pi-02-sem-2024.onrender.com/reports/generate",
         filters,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Adiciona o token no cabeçalho
+            Authorization: `Bearer ${token}`,
           },
-          responseType: "blob", // Para receber o arquivo em formato binário
+          responseType: "blob",
         }
       );
 
@@ -35,7 +35,7 @@ const Header_Home = () => {
       const blob = new Blob([response.data], { type: "application/vnd.ms-excel" });
       const link = document.createElement("a");
       link.href = window.URL.createObjectURL(blob);
-      link.download = `relatorio-${filters.type}-${Date.now()}.xlsx`; // Nome do arquivo
+      link.download = `relatorio-${filters.type}-${Date.now()}.xlsx`;
       link.click();
 
       alert("Relatório gerado com sucesso!");
@@ -60,16 +60,14 @@ const Header_Home = () => {
           <a
             href="#relatorios"
             onClick={(e) => {
-              e.preventDefault(); // Evita o comportamento padrão do link
-              setIsReportModalOpen(true); // Abre o modal
+              e.preventDefault();
+              setIsReportModalOpen(true);
             }}
           >
             Relatórios
           </a>
         </nav>
       </header>
-
-      {/* Modal de Relatórios */}
       {isReportModalOpen && (
   <div className="report-modal">
     <div className="report-modal-content">
