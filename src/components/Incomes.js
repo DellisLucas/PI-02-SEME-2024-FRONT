@@ -216,7 +216,7 @@ const Incomes = () => {
                   {filteredIncomes.map((expense) => (
                     <tr key={expense.id}>
                       <td>{expense.description}</td>
-                      <td>{new Date(expense.date).toLocaleDateString()}</td>
+                      <td>{new Date(expense.date + "T00:00:00").toLocaleDateString()}</td>
                       <td>{expense.amount.toFixed(2)}</td>
                       <td>
                         <FaEdit onClick={() => openModal(expense)} />
