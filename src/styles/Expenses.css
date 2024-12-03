@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&display=swap');
+
+* {
+  font-family: 'Red Hat Text', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 15px 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fafafa;
+  position: relative;
+}
+
+/* Título do Modal */
+.modal-content h2 {
+  grid-column: span 2;
+  color: #6139FF;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.modal-content input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Botões no Modal */
+.modal-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  background-color: #6139ffb6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.modal-actions button:hover {
+  background-color: #6139FF;
+}
+
+button.cancel {
+  background-color: #FF6B6B;
+}
+
+button.cancel:hover {
+  background-color: #E55656;
+}
+
+/* Imagem do porquinho */
+.pig-container {
+  position: absolute;
+  right: -225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.pig-image {
+  width: 250px; 
+  height: auto;
+}
+
+/* Bolha de Fala */
+.speech-bubble {
+  background-color: #4D0FFFD9;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 300px;
+  font-size: 14px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 120px;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #4D0FFF transparent transparent transparent;
+}
+
+/* Página Principal */
+.expenses-main {
+  padding: 20px;
+  color: #333;
+  min-height: 100vh;
+}
+
+.Desp-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.Desp-icon {
+  width: 450px;
+  height: 77px;
+}
+
+/* Resumo de Despesas */
+.expenses-summary {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.expenses-summary h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #6139FF;
+}
+
+/* Filtro de Data */
+.date-filter {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date-filter label {
+  font-size: 16px;
+}
+
+.date-filter input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.date-filter button {
+  padding: 10px 20px;
+  background-color: #6139FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.date-filter button:hover {
+  background-color: #4b2ebe;
+}
+
+/* Contêiner da Tabela com Scroll */
+.expenses-table-container {
+  max-height: 400px; /* Define uma altura máxima fixa */
+  overflow-y: auto; /* Adiciona scroll vertical */
+}
+
+/* Tabela */
+.expenses-table {
+  width: 50%; /* Mantém o tamanho da tabela como especificado */
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Células */
+.expenses-table th,
+.expenses-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* Cabeçalho Fixo */
+.expenses-table th {
+  background-color: #f3f3f3;
+  color: #6139FF;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: sticky; /* Fixa o cabeçalho durante o scroll */
+  top: 0;
+  z-index: 1; /* Garante que o cabeçalho fique sobre o conteúdo */
+}
+
+/* Linhas Alternadas */
+.expenses-table tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
